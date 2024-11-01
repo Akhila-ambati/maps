@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filter Adults</title>
+</head>
+<body>
+<h1>Filtered Adults</h1>
+<button id="filterAdultsBtn">Filter Adults</button>
+<ul id="adultsList"></ul>
+
+<script>
+  const people = [
+    { name: "John", age: 17 },
+    { name: "Jane", age: 22 },
+    { name: "Jim", age: 15 },
+    { name: "Jack", age: 19 }
+  ];
+
+  function filterAdults() {
+    const adults = people.filter(person => person.age >= 18);
+    
+    const adultsList = document.getElementById('adultsList');
+    adultsList.innerHTML = '';
+    
+    adults.forEach(adult => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${adult.name}, Age: ${adult.age}`;
+      adultsList.appendChild(listItem);
+    });
+  }
+
+  document.getElementById('filterAdultsBtn').addEventListener('click', filterAdults);
+</script>
+</body>
+</html>

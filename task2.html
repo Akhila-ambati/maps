@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculate Average</title>
+</head>
+<body>
+<h1>Calculate Average of Numbers</h1>
+<button id="calculateAverageBtn">Calculate Average</button>
+<p id="output"></p>
+
+<script>
+  // Original array of numbers
+  let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  // Function to calculate average of all numbers and display it
+  function calculateAverage() {
+    let sum = numbers.reduce(function(accumulator, currentValue) {
+      return accumulator + currentValue;
+    }, 0);
+
+    let average = sum / numbers.length;
+
+    // Displaying the result in the DOM
+    document.getElementById('output').innerText = 'Average of Numbers: ' + average;
+  }
+
+  // Event listener for the button
+  document.getElementById('calculateAverageBtn').addEventListener('click', calculateAverage);
+</script>
+</body>
+</html>
